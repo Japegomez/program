@@ -1,0 +1,8 @@
+1. Herencia: https: //www.youtube.com/watch?v=vz7W6jMYMpc&list=PLu3lm_5otROes3zv_IruDnGsGRX1D4bQd 
+2. Interfaces: https://www.youtube.com/watch?v=yn2biuYDHBg&list=PLu3lm_5otROfz5G-xOLB8momXamf86IT0
+3. Java Collections: https://www.youtube.com/watch?v=siqqTOJpHxw&list=PLu3lm_5otROfz5G-xOLB8momXamf86IT0&index=3
+4. Ventanas: https://www.youtube.com/watch?v=eNX2IqcYp0c&list=PLu3lm_5otROfjkCESIecCYr24KNfNkVT2
+5. Eventos: https://www.youtube.com/watch?v=iJ5-pRQ8CiA&list=PLu3lm_5otROc7W15-FCstkMRKs8UI5vvb
+6.Hilos: https://www.youtube.com/watch?v=Rp-jBpYquJc&list=PLu3lm_5otROciut3FZzCsomnaLiZH2e1o
+7. Gestión de errores: https://www.youtube.com/watch?v=Co6VzmuZkmY&list=PLu3lm_5otROcllvW4SXbUrdm84xCw9Bvb
+8. Gestión de ficheros: https://www.youtube.com/watch?v=6BGOXd29beU&list=PLu3lm_5otROcllvW4SXbUrdm84xCw9Bvb&index=7

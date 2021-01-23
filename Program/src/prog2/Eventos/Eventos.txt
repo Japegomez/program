@@ -1,0 +1,113 @@
+		ActionListener alCancelar = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		};
+
+
+		KeyListener klQuitaNumeros = new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				System.out.println( "Typed  " + e );
+				if (e.getKeyChar()>='0' && e.getKeyChar()<='9') {
+					e.consume();
+				}
+			}
+			@Override
+			public void keyReleased(KeyEvent e) {
+				System.out.println( "Released " + e );
+			}
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println( "Pressed " + e );
+			}
+		};
+
+		FocusListener flFoco = new FocusListener() {
+			@Override
+			 public void focusLost(FocusEvent e) {
+				System.out.println( "Pierdo el foco");
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				System.out.println( "Recibo el foco");
+			}
+		};
+		
+		MouseListener mlRaton = new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println( "Click en (" + e.getX() + "," + e.getY() + ")" );
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.out.println( "Press en (" + e.getX() + "," + e.getY() + ")" );
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				System.out.println( "Release en (" + e.getX() + "," + e.getY() + ")" );
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				System.out.println( "Enter en (" + e.getX() + "," + e.getY() + ")" );
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				System.out.println( "Exit en (" + e.getX() + "," + e.getY() + ")" );
+			}
+		};
+
+		ComponentAdapter caComponente = new ComponentAdapter() { 
+			@Override
+			public void componentResized(ComponentEvent e) { //cuando cambia el tamaño del componente por ejemplo al agrandar la ventana.
+				lFoto.setLocation( pCentral.getWidth()/2 - lFoto.getWidth()/2, pCentral.getHeight()/2 - lFoto.getHeight()/2); //mantiene la foto siempre en el centro de la pantalla.
+			}
+		});
+
+		WindowListener wlVentana = new WindowListener(){
+			@Override
+			public void windowOpened(WindowEvent e) { //cuando se abre
+				// TODO Auto-generated method stub
+				System.out.println( "Opened" );
+			}
+
+			@Override
+			public void windowClosing(WindowEvent e) {//cuando se esta cerrando (usar por ejemplo cuando queremos que no se cierre en ciertas ocasiones)
+				// TODO Auto-generated method stub
+				System.out.println( "Closing" );
+				((MiVentanaConEventos)(e.getSource())).dispose();
+			}
+
+			@Override
+			public void windowClosed(WindowEvent e) {//cuando se cierra
+				// TODO Auto-generated method stub
+				System.out.println( "Closed" );
+			}
+
+			@Override
+			public void windowIconified(WindowEvent e) { //cuando se minimiza
+				// TODO Auto-generated method stub
+				System.out.println( "Iconified" );
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println( "Deiconified" );
+			}
+
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println( "Activated" );
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println( "Deactivated" );
+			}
+		};
+
+

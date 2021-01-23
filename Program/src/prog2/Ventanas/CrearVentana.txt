@@ -1,0 +1,51 @@
+	public MiSegundaVentana( String titulo ) {
+		super( titulo );  // Llama al constructor original de JFrame (clase padre)
+		// 1.- Configuración de la ventana
+		this.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );   // hace un ventana.dispose() cuando el usuario la cierra
+		//this.setSize( 600, 400 );  // Tamaño de la ventana (la mayor parte de los atributos hay que cambiarlos con sets)
+		//this.setLocation( 100, 100 );  // Coordenada de origen de la ventana con respecto al escritorio  (absoluta)
+		getContentPane().setLayout(new BorderLayout()); //Por defecto FlowLayout
+
+		// 2.- Creación de contenedores (paneles) y componentes
+		JPanel panelInferior = new JPanel();  // Por defecto en un panel FlowLayout
+		tfEntrada  = new JTextField( 20 );
+		lMensaje = new JLabel( "Introduce tu nombre:" );
+		JButton bAceptar = new JButton( "Aceptar" );
+		JButton bCancelar = new JButton( "Cancelar" );
+		
+		// 3.- Asignación de componentes a contenedores
+		this.add( tfEntrada, BorderLayout.CENTER );
+		this.add( lMensaje, BorderLayout.NORTH );
+		panelInferior.setLayout( new GridLayout( 1, 2 ) );
+		panelInferior.add( bAceptar );
+		panelInferior.add( bCancelar );
+		this.add( panelInferior, BorderLayout.SOUTH );
+
+		// 4.- Decoraciones
+		this.pack(); // Redefinir el tamaño para que ajuste al mínimo necesario para todos los componentes
+		this.setLocationRelativeTo(null);  // Si se quiere que se centre en la ventana
+	
+		// 5.- Eventos
+		//normal
+		ActionListener alCancelar = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		}
+		bCancelar.addActionListener(alCancelar);
+		//Clase anónima
+		bAceptar.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		bBorrar.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tfUsuario.setText( "" );
+				tfPassword.setText( "" );
+			}
+		});
+	}

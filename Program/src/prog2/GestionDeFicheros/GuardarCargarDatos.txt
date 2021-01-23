@@ -1,0 +1,19 @@
+		public void guardarDatos( String nombreFichero ) {
+			try {
+				ObjectOutputStream oos = new ObjectOutputStream( new FileOutputStream( nombreFichero ) );
+				oos.writeObject( mapa );
+				oos.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		@SuppressWarnings("unchecked") 
+		public void cargarDatos( String nomFichero ) {
+			try {
+				ObjectInputStream ois = new ObjectInputStream( new FileInputStream( nomFichero ) );
+				mapa = (HashMap<String,ArrayList<Partido>>) ois.readObject();
+				ois.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
