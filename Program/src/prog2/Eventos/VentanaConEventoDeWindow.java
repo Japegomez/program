@@ -1,10 +1,7 @@
-package temas78.ejemplos.eventos;
+package prog2.Eventos;
 
 import java.awt.*;   // Abstract Window Toolkit
 import javax.swing.*;  // Swing
-
-import temas78.VentanaConEventos2;
-
 import java.awt.event.*;  // Eventos
 
 /** Clase de ejemplo de llamada entre ventanas con eventos de acción
@@ -27,7 +24,6 @@ public class VentanaConEventoDeWindow extends JFrame {
 	
 	private JLabel lMensaje;  // Label de mensaje
 	private JTextArea taDatos; // Área de texto de datos
-	private VentanaConEventos2 v2;
 	
 	public VentanaConEventoDeWindow( String titulo ) {
 		super( titulo );  // Llama al constructor original de JFrame (clase padre)
@@ -62,13 +58,6 @@ public class VentanaConEventoDeWindow extends JFrame {
 			// Atributos si necesitarámos
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				v2 = new VentanaConEventos2( "Login" );  // Si queréis completar, pasar la propia ventana a la de login
-				v2.setLocation( getLocation().x, getLocation().y );
-				v2.setVentanaAAbrirTrasCerrarEsta( VentanaConEventoDeWindow.this );  // Me paso a mí misma para que me vuelva a abrir la vent. de login cuando se acabe
-				v2.setVisible( true );
-				setVisible( false );
-				// Nada que ver con el JOptionPane -> Ese ESPERA a que la entrada acabe
-				System.out.println( "Cuándo" );
 			}
 		});
 		bAcceso.addActionListener( new ActionListener() {
@@ -95,10 +84,6 @@ public class VentanaConEventoDeWindow extends JFrame {
 			@Override
 			public void windowActivated(WindowEvent e) {
 				System.out.println( "Activated" );
-				if (v2!=null) {
-					taDatos.setText( "Vuelto del login: " + v2.getInfoCierre() );
-					v2 = null;
-				}
 			}
 			@Override
 			public void windowDeactivated(WindowEvent e) {

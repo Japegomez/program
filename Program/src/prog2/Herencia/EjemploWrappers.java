@@ -1,10 +1,8 @@
-package tema3;
+package prog2.Herencia;
 
-import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import tema3.juegoBolas.Pelota;
 
 public class EjemploWrappers {
 	
@@ -14,8 +12,6 @@ public class EjemploWrappers {
 		System.out.println( o.toString() );
 		o = new Point(2,5);
 		System.out.println( o.toString() );
-		o = new Pelota( 10, 10, 5, Color.RED );
-		System.out.println( o );
 		
 		// Contenedores de Objects, polimorfismo total
 		Object[] ao = new Object[5];

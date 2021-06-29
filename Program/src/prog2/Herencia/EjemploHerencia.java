@@ -1,4 +1,4 @@
-package tema3;
+package prog2.Herencia;
 
 public class EjemploHerencia {
 

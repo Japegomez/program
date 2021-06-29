@@ -1,4 +1,4 @@
-package temas78.ejemplos.eventos;
+package prog2.Eventos;
 
 import java.awt.*;
 import java.awt.event.*;
